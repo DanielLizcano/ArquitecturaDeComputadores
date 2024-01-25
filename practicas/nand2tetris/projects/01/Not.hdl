@@ -1,0 +1,17 @@
+// La entrada esta conformada por un unico bit 
+// para implementar el not se hace uso de una compuerta Nand
+// donde cada entrada es el mismo bit
+
+/**
+ * Not gate:
+ * out = not in
+ */
+
+CHIP Not {
+    IN in;
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+    Nand(a=in, b=in, out=out);
+}

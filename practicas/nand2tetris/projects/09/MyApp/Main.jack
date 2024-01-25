@@ -1,0 +1,12 @@
+
+
+
+class Main {
+    function void main() {
+        var Pizarra game;
+        let game = Pizarra.new();
+        do game.run();
+        do game.dispose();
+        return;
+    }
+}

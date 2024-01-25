@@ -1,0 +1,19 @@
+// Tenemos como entrada  'a' y 'b'
+// Dado que el xor lo podemos definir como:
+// xor(a,b) = a'b + a'b
+// Negamos ambas entradas
+// Se realiza un and entre cada entrada
+// y la negacion de la otra entrada
+// Esta dos salidas se pasan por un Or
+
+  CHIP Xor {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+    Not(in=a, out=x);
+    Not(in=b, out=y);
+    And(a=a, b=y, out=c);
+    And(a=x, b=b, out=d);
+    Or(a=c, b=d, out=out);
+}

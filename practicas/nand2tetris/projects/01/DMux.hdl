@@ -1,0 +1,15 @@
+// El delmultiplexor posee 2 entradas, in y sel
+// la salida esta conformada por las variables a y b
+// Para implementar el demultiplexor es necesario
+// usar una compuerta And donde el selector a sido negado, 
+// y retornamos "b" con selector sin negar.
+
+CHIP DMux {
+    IN in, sel;
+    OUT a, b;
+
+    PARTS:
+    Not(in=sel, out=x);
+    And(a=x, b=in, out=a);
+    And(a=sel, b=in, out=b);
+}

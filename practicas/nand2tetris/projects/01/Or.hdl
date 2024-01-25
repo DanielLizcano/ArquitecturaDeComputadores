@@ -1,0 +1,17 @@
+/ Tenemos como entradas 'a' y 'b'
+// negamos ambas entradas 
+// y las pasamos por una Nand
+// Dada la identidad basica
+// a'b' = (a + b)' negamos ambos lados
+// (a'b')' = a + b
+
+
+CHIP Or {
+  IN a, b;
+  OUT out;
+
+  PARTS:
+  Not(in=a, out=x);
+  Not(in=b, out=y);
+  Nand(a=x, b=y, out=out);
+}  

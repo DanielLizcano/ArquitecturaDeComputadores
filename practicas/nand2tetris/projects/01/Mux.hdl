@@ -1,0 +1,18 @@
+// Tenemos como entradas 'a,'b' y 'sel'
+// siendo 'sel' un selector
+// Dado que el Multiplexor los podemos definir como:
+// Mux(a,b,sel) = (a*sel')+(b*sel)
+// Negamos el selector y lo usamos junto 'a' en un and
+// y usamos el selector sin negar junto con 'b' en otro and
+// Finalmente ambas salidas las pasamos por un Or
+
+  CHIP Mux {
+    IN a, b, sel;
+    OUT out;
+
+    PARTS:
+    Not(in=sel, out=x);
+    And(a=sel, b=b, out=y);
+    And(a=x, b=a, out=z);
+    Or(a=y, b=z, out=out);
+}
